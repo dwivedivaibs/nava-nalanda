@@ -274,94 +274,59 @@
       <div class="row pb-30">
       </div>
       <div class="row">
-        <div class="col-sm-4">
-          <div class="single_plan__block single_plan__block-img block_bg6 block_bg6 matchHeigh">
-            <div class="plan-content-box plan-content-box__white__bg">
-              <h3>President's Message</h3>
-              <% if @manager_photo.present? %>
-                <%= image_tag(@manager_photo.image.url, alt:"president", style: "width: 185px;margin-right: 10px;float:left;") %>
-              <% else %>
-                <%= image_tag('president.jpg', alt:"president", style: "width: 185px;margin-right: 10px;float:left;") %>
-              <% end %>
-              <% if @president_message.present? %>
-                <p><%= raw @president_message.description %></p>
-              <% else %>
-                <p style="text-align:justify;">"Welcome to The NaNAVA NALANDA Santiniketan School.<br />Since its inception, NaNAVA NALANDA Santiniketan School has expanded opportunities for high school and middle school students through innovative programs that prepare them for college and beyond.To prepare educators with the technological skills necessary to enhance learning experiences both online and in the classroom."
-                </p>
-              <% end %>
-              <h4 style="margin-bottom:0px !important">NIKHIL YADAV</h4>
-              <a href="<%= welcome_chairman_message_path %>" class="more_btn__block pull-right" style="margin-top: 0px;">More <i class="fa fa-angle-right"></i></a>
-            </div>
-          </div>
+        <div class="col-sm-3">
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <div class="single_plan__block single_plan__block-img block_bg6 block_bg6 matchHeigh">
             <div class="plan-content-box plan-content-box__white__bg">
-              <h3>Director's Message</h3>
+              <h3>Principal's Message</h3>
               <% if @director_photo.present? %>
-                <%= image_tag(@director_photo.image.url, alt:"Director", style: "width: 185px;margin-right: 10px;float:left;") %>
+                <%= image_tag(@director_photo.image.url, alt:"Principal", style: "width: 185px;margin-right: 10px;float:left;") %>
               <% else %>
-                <%= image_tag('director.jpg', alt:"Director", style: "width: 185px;margin-right: 10px;float:left;") %>
+                <%#= image_tag('principal.jpg', alt:"Principal", style: "width: 185px;margin-right: 10px;float:left;") %>
               <% end %>
               <% if @director_message.present? %>
                 <p><%= raw @director_message.description %></p>
               <% else %>
-                <p style="text-align:justify;">"Dear students and parents / Guardians of NaNAVA NALANDA Santiniketan School.It is with great pleasure that I welcome you to our school website. I am honored and feel very privileged to be the Principal of NaNAVA NALANDA Santiniketan School, Etawah.On behalf of the entire team at AWS, I welcome you all to the Aristotle family. It is extremely exciting to begin the academic year 2019-20."</p>
+                <p style="text-align:justify;"><b>Nava Nalanda</b> steps into her forty seventh year. The young fledgling that had first started spreading its wings in the year 1967 is now flying high, having completed forty six years of academic excellence, cultural celebrations and sporting activities. Under the aegis and expert tutelage of Late Arya Mitra and Late Bharati Mitra, Nava Nalanda has been able to overcome obstacles and hurdles and the rest, as we all know is history. The abode NN’s prayer is for the young in spirit. The school has its foundations deep in tradition – as its name denotes; but its gardens are verdant with the foliage of springtime.</p>
               <% end %>
-              <h4 style="margin-bottom:0px !important">MRS. RITA SINGH</h4>
-              <a href="<%= welcome_chairman_message_path %>" class="more_btn__block pull-right" style="margin-top: 0px;">More <i class="fa fa-angle-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="single_plan__block single_plan__block-img block_bg6 block_bg6 matchHeigh">
-            <div class="plan-content-box plan-content-box__white__bg">
-              <h3>Principal's Message</h3>
-              <% if @principal_photo.present? %>
-                <%= image_tag(@principal_photo.image.url, alt:"Principal", style: "width: 185px;margin-right: 10px;float:left;") %>
-              <% else %>
-                <%= image_tag('principal.jpg', alt:"Principal", style: "width: 160px;margin-right: 10px;float:left;") %>
-              <% end %>
-              <% if @principal_message.present? %>
-                <p><%= raw @principal_message.description %></p>
-              <% else %>
-                <p style="text-align:justify;">"Dear students and parents / Guardians of NaNAVA NALANDA Santiniketan School.It is with great pleasure that I welcome you to our school website. I am honored and feel very privileged to be the Principal of NaNAVA NALANDA Santiniketan School, Etawah.On behalf of the entire team at AWS, I welcome you all to the Aristotle family. It is extremely exciting to begin the academic year 2019-20."
-                </p>
-              <% end %>
-              <h4>Mr. VED PATHI TIWARI</h4>
               <a href="<%= welcome_principal_message_path %>" class="more_btn__block pull-right" style="margin-top: 0px;">More <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <section id="work" class="padding">
-    <div class="container">
-      <!-- work Filter -->
-      <div class="row">
-        <div class="col-sm-12">
-          <h2>Photo Gallery</h2>
+        <div class="col-sm-3">
         </div>
       </div>
-      <!-- End work Filter -->
-      <div class="row container-grid nf-col-3" style="position: relative;">
-        <% @photos.each do |photo|%>
-          <div class="col-md-4 nf-item photo spacing">
-            <div class="item-box">
-              <a>
-                <%= image_tag(photo.image.url, class: "item-container") %>
-              </a>
-              <div class="link-zoom">
-                <!--<a href="portfolio-single.html" class="project_links"> <i class="fa fa-link"> </i> </a>-->
-                <a href="<%= photo.image.url %>" class="fancylight popup-btn" data-fancybox-group="light"> <i class="fa fa-search-plus"></i> </a>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
     </div>
   </section>
+  <% if @photos.present? %>
+    <section id="work" class="padding">
+      <div class="container">
+        <!-- work Filter -->
+        <div class="row">
+          <div class="col-sm-12">
+            <h2>Photo Gallery</h2>
+          </div>
+        </div>
+        <!-- End work Filter -->
+        <div class="row container-grid nf-col-3" style="position: relative;">
+          <% @photos.each do |photo|%>
+            <div class="col-md-4 nf-item photo spacing">
+              <div class="item-box">
+                <a>
+                  <%= image_tag(photo.image.url, class: "item-container") %>
+                </a>
+                <div class="link-zoom">
+                  <!--<a href="portfolio-single.html" class="project_links"> <i class="fa fa-link"> </i> </a>-->
+                  <a href="<%= photo.image.url %>" class="fancylight popup-btn" data-fancybox-group="light"> <i class="fa fa-search-plus"></i> </a>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  <% end %>
     <style>
       .item-box {
         height: 250px;
